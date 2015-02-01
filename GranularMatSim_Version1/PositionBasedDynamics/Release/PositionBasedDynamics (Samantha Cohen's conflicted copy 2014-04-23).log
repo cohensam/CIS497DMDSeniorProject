@@ -1,0 +1,18 @@
+﻿Build started 4/23/2014 1:28:28 AM.
+     1>Project "C:\Users\User\Dropbox\CIS 563 Final Project\FinalProject\PBD_starterkit\cohensam_PBD_starterkit\PBD_starterkit\PositionBasedDynamics\PositionBasedDynamics.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Release\WaterSim.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+         PositionBasedDynamics.vcxproj -> C:\Users\User\Dropbox\CIS 563 Final Project\FinalProject\PBD_starterkit\cohensam_PBD_starterkit\PBD_starterkit\Release\WaterSim.exe
+       FinalizeBuildStatus:
+         Deleting file "Release\WaterSim.unsuccessfulbuild".
+         Touching "Release\WaterSim.lastbuildstate".
+     1>Done Building Project "C:\Users\User\Dropbox\CIS 563 Final Project\FinalProject\PBD_starterkit\cohensam_PBD_starterkit\PBD_starterkit\PositionBasedDynamics\PositionBasedDynamics.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.16
