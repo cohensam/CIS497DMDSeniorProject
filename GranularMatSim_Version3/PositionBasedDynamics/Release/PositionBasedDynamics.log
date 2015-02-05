@@ -1,0 +1,105 @@
+﻿Build started 1/6/2015 5:39:37 AM.
+     1>Project "C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version3\PositionBasedDynamics\PositionBasedDynamics.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\WaterSim.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../tinyxml /I../glm /I../glew/include /I../glfw/include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\WaterSim.cpp
+         WaterSim.cpp
+     1>Source\WaterSim.cpp(82): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>Source\WaterSim.cpp(83): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>Source\WaterSim.cpp(84): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>Source\WaterSim.cpp(573): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(609): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>Source\WaterSim.cpp(610): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>Source\WaterSim.cpp(622): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>Source\WaterSim.cpp(623): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>Source\WaterSim.cpp(635): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>Source\WaterSim.cpp(636): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>Source\WaterSim.cpp(663): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(693): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(909): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1046): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1049): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1061): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1154): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1243): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1283): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1290): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(1300): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1312): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(1320): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(1328): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(1338): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1352): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1370): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1390): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Source\WaterSim.cpp(1392): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1405): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(1420): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1435): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1471): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1511): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1524): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1541): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1576): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Source\WaterSim.cpp(1578): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1588): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Source\WaterSim.cpp(1589): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1597): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1620): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1634): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1647): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1659): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1686): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(1691): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1710): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1803): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1808): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1822): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1838): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1857): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1875): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1900): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1928): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1936): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(1969): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(1974): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(1986): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(1995): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(2002): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Source\WaterSim.cpp(2003): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(2095): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(2131): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(2164): warning C4244: 'argument' : conversion from 'float' to 'const int', possible loss of data
+     1>Source\WaterSim.cpp(2165): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\WaterSim.cpp(2168): warning C4244: '/=' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(2240): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>Source\WaterSim.cpp(2289): warning C4305: 'initializing' : truncation from 'double' to 'float'
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version3\Release\WaterSim.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:../glew/lib /LIBPATH:../glfw/lib /LIBPATH:../tinyxml tinyxml_STL.lib glew32.lib glu32.lib opengl32.lib glfw.lib glfwdll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\WaterSim.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version3\Release\WaterSim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version3\Release\WaterSim.lib" /MACHINE:X86 Release\constraint.obj
+         Release\main.obj
+         Release\point.obj
+         Release\scene.obj
+         Release\sphere.obj
+         Release\stb_image.obj
+         Release\stb_image_write.obj
+         Release\triangle.obj
+         Release\vec.obj
+         Release\WaterSim.obj
+         Generating code
+         Finished generating code
+     1>tinyxml_STL.lib(tinyxml.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml_STL.lib(tinyxml.obj)' or at 'C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version3\Release\vc100.pdb'; linking object as if no debug info
+     1>tinyxml_STL.lib(tinyxmlerror.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml_STL.lib(tinyxmlerror.obj)' or at 'C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version3\Release\vc100.pdb'; linking object as if no debug info
+     1>tinyxml_STL.lib(tinyxmlparser.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml_STL.lib(tinyxmlparser.obj)' or at 'C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version3\Release\vc100.pdb'; linking object as if no debug info
+         PositionBasedDynamics.vcxproj -> C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version3\Release\WaterSim.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version3\Release\WaterSim.exe;#1" /manifest Release\WaterSim.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\WaterSim.unsuccessfulbuild".
+         Touching "Release\WaterSim.lastbuildstate".
+     1>Done Building Project "C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version3\PositionBasedDynamics\PositionBasedDynamics.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.07
