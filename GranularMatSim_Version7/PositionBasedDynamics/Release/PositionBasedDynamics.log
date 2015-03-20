@@ -1,4 +1,4 @@
-﻿Build started 3/4/2015 1:50:23 PM.
+﻿Build started 3/20/2015 1:41:45 AM.
      1>Project "C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version7\PositionBasedDynamics\PositionBasedDynamics.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\WaterSim.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -105,4 +105,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.80
+Time Elapsed 00:00:04.97

@@ -1,0 +1,9 @@
+for( $i=0; $i<1000; ++$i )
+{
+	// create a sphere. The new sphere will be the currently
+	// selected object.
+	sphere;
+
+	// move the selected object a bit in X
+	xform -translation (2*$i) 0 0;
+};
