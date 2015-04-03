@@ -1,0 +1,21 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib slanted_plane.mtl
+g default
+v -11.973316 -1.882441 11.712280
+v 12.006660 -1.882441 11.712280
+v -11.973316 3.087943 -11.686856
+v 12.006660 3.087943 -11.686856
+vt 0.000000 0.000000
+vt 1.000000 0.000000
+vt 1.000000 0.997549
+vt 0.000000 0.997549
+vn 0.000000 0.978175 0.207782
+vn 0.000000 0.978175 0.207782
+vn 0.000000 0.978175 0.207782
+vn 0.000000 0.978175 0.207782
+s 1
+g slanted_plane:pPlane1
+usemtl slanted_plane:initialShadingGroup
+f 1/1/1 2/2/2 3/4/3
+f 3/4/3 2/2/2 4/3/4
