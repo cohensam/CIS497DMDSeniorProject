@@ -1,0 +1,5 @@
+<scene>
+  <primitives>
+    <plane nx="0.0" ny="1.0" nz="0.0" value="0.0"></plane>
+  </primitives>
+</scene>

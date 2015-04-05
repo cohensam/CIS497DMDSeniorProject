@@ -1,0 +1,21 @@
+﻿Build started 4/5/2015 1:09:10 AM.
+     1>Project "C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version13\PositionBasedDynamics\PositionBasedDynamics.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\WaterSim.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+       Manifest:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "Debug\WaterSim.unsuccessfulbuild".
+         Touching "Debug\WaterSim.lastbuildstate".
+     1>Done Building Project "C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version13\PositionBasedDynamics\PositionBasedDynamics.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.21

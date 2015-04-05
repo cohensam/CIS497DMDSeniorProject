@@ -1,0 +1,10 @@
+Bibliography
+
+file:///C:/Users/Samantha/Downloads/a40-solenthaler.pdf
+http://www.gmrv.es/Publications/2011/AO11/AlduanOtaduy_SCA2011.pdf
+http://cg.informatik.uni-freiburg.de/publications/2012_VRIPHYS_hiResGranularSPH.pdf
+http://mmacklin.com/pbf_sig_preprint.pdf
+http://wnbell.com/media/2005-07-SCA-Granular/BeYiMu2005.pdf
+http://graphics.cs.kuleuven.be/publications/MixingFluidsAndGranularMaterials/Lenaerts_EG09_MixingFluidsAndGranularMaterials.pdf
+http://kanamori.cs.tsukuba.ac.jp/publications/pg08/sand-pg08-fin.pdf
+http://www.inf.ufrgs.br/cgi2007/cd_cgi/papers/harada.pdf

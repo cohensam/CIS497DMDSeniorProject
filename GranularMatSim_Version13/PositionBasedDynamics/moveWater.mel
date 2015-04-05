@@ -1,0 +1,32 @@
+global proc moveWater(int $i_frame_max, int $particle_num, string $s_file)
+{
+	for( $i=1; $i<$i_frame_max; $i++ )
+	{
+		$water_file = "C:/Users/Samantha/Documents/WaterSim/particles_" + $i + ".txt";
+		$file = `fopen $water_file "r"`;
+	     	$temp=(int)$i;
+		currentTime $temp;
+		string $nextLine = `fgetline $file`;
+
+		$meshes = `ls -type "mesh"`;
+		for( $j = 1; $j < $particle_num; $j++ )
+		{
+			$mesh = "pSphere" + $j;
+			string $rawAnimArray[];
+			$nextLine = `fgetline $file`;
+			tokenize ($nextLine, " ", $rawAnimArray);
+			float $x = $rawAnimArray[0];
+			float $y = $rawAnimArray[1];
+			float $z = $rawAnimArray[2];
+			setAttr ($mesh+".translateX") $x;
+			setKeyframe ($mesh+".translateX");
+			setAttr ($mesh+".translateY") $y;
+			setKeyframe ($mesh+".translateY");
+			setAttr ($mesh+".translateZ") $z;
+			setKeyframe ($mesh+".translateZ");
+		}	
+		fclose $file;
+	}
+};
+
+moveWater(185,8000,"particles_0.txt");
