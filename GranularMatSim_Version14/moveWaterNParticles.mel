@@ -1,0 +1,64 @@
+global proc moveWaterNParticles(int $i_frame_max, int $particle_num)
+{
+	for( $i=1; $i<$i_frame_max; $i++ )
+	{
+		$water_file = "C:/Users/Samantha/Documents/CIS 497 DMD Senior Project/GranularMatSim_Version9/PositionBasedDynamics/output/1000_grain_particles_" + $i + ".txt";
+		$file = `fopen $water_file "r"`;
+		string $nextLine = `fgetline $file`;
+
+		$meshes = `ls -type "mesh"`;
+		
+		string $nParticleShape = "nParticleShape" + $i;
+		string $cmd = "nParticle -sn \"Balls\"";
+		for( $j = 1; $j < $particle_num; $j++ )
+		{
+			string $rawAnimArray[];
+			$nextLine = `fgetline $file`;
+			tokenize ($nextLine, " ", $rawAnimArray);
+			$cmd += " -p " + $rawAnimArray[0] + " " + $rawAnimArray[1] + " " + $rawAnimArray[2];
+			
+		}	
+		$cmd += ";";
+		print($cmd);
+		eval $cmd;
+		
+		particleToPoly;
+		string $cmd1 = "nParticleShape" + $i + ".blobbyRadiusScale";
+		setAttr $cmd1 0.2;
+		string $cmd2 = "nParticleShape" + $i + ".meshTriangleSize";
+		setAttr $cmd2 0.15;
+		string $cmd3 = "nParticleShape" + $i + ".meshSmoothingIterations";
+		setAttr $cmd3 10;
+		string $cmd44 = "nParticleShape" + $i + ".isDynamic";
+		setAttr $cmd44 0;
+		
+		fclose $file;
+	}
+	
+	for( $i=1; $i<$i_frame_max; $i++ )
+	{
+		$temp=(int)$i;
+		currentTime $temp;
+		
+		string $cmd4 = "polySurface"+$i+".translateX";
+		setKeyframe ($cmd4);
+		string $cmd5 = "polySurface"+$i+".translateY";
+		setAttr ($cmd5) 0.0;
+		string $cmd6 = "polySurface"+$i+".translateY";
+		setKeyframe ($cmd6);
+		string $cmd7 = "polySurface"+$i+".translateZ";
+		setKeyframe ($cmd7);
+		
+		for( $j=1; $j<$i_frame_max; $j++ )
+		{
+			if ($i != $j) {
+				string $cmd8 = "polySurface"+$j+".translateY";
+				setAttr ($cmd8) 500.0;
+				string $cmd9 = "polySurface"+$j+".translateY";
+				setKeyframe ($cmd9);
+			}
+		}
+	}
+};
+
+moveWaterNParticles(10,1000);

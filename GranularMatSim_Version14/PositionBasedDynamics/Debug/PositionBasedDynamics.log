@@ -1,0 +1,132 @@
+﻿Build started 4/6/2015 4:25:40 AM.
+     1>Project "C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version14\PositionBasedDynamics\PositionBasedDynamics.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\WaterSim.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../tinyxml /I../glm /I../glew/include /I../glfw/include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\constraint.cpp Source\main.cpp Source\point.cpp Source\scene.cpp Source\sphere.cpp Source\triangle.cpp Source\vec.cpp Source\WaterSim.cpp
+         WaterSim.cpp
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(103): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(107): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(211): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(404): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(541): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(544): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(556): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(648): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(721): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(766): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(773): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(783): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(795): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(803): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(811): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(821): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(835): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(872): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(894): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(915): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(960): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1010): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1027): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1076): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1081): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1084): warning C4244: 'argument' : conversion from 'float' to 'const int', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1089): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1098): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1100): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1103): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1106): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1108): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1110): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1127): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1136): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1138): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1141): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1145): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1147): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1162): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1166): warning C4244: 'argument' : conversion from 'float' to 'const int', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1171): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1180): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1182): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1184): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1187): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1189): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1191): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1217): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1225): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1240): warning C4244: 'argument' : conversion from 'int' to 'const float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1242): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1243): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1257): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1269): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1274): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1293): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1298): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1312): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1318): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1336): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1350): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1417): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1430): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1463): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1468): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1477): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1480): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1486): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\watersim.cpp(1494): warning C4018: '<' : signed/unsigned mismatch
+         vec.cpp
+         triangle.cpp
+         sphere.cpp
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\sphere.cpp(197): warning C4018: '<' : signed/unsigned mismatch
+         scene.cpp
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\scene.cpp(326): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\scene.cpp(314): warning C4101: 'a' : unreferenced local variable
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\scene.cpp(572): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\scene.cpp(589): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         point.cpp
+         main.cpp
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\main.cpp(72): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\main.cpp(449): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\main.cpp(469): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+     1>c:\users\samantha\documents\cis 497 dmd senior project\granularmatsim_version14\positionbaseddynamics\source\main.cpp(490): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+         constraint.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../tinyxml /I../glm /I../glew/include /I../glfw/include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt Source\stb_image.c Source\stb_image_write.c
+         stb_image_write.c
+         stb_image.c
+         Generating Code...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\WaterSim.exe.embed.manifest.res" Debug\WaterSim_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version14\Debug\WaterSim.exe" /INCREMENTAL /NOLOGO /LIBPATH:../glew/lib /LIBPATH:../glfw/lib /LIBPATH:../tinyxml tinyxmld_STL.lib glew32.lib glu32.lib opengl32.lib glfw.lib glfwdll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\WaterSim.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version14\Debug\WaterSim.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version14\Debug\WaterSim.lib" /MACHINE:X86 Debug\WaterSim.exe.embed.manifest.res
+         Debug\constraint.obj
+         Debug\main.obj
+         Debug\point.obj
+         Debug\scene.obj
+         Debug\sphere.obj
+         Debug\stb_image.obj
+         Debug\stb_image_write.obj
+         Debug\triangle.obj
+         Debug\vec.obj
+         Debug\WaterSim.obj
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>tinyxmld_STL.lib(tinyxml.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxmld_STL.lib(tinyxml.obj)' or at 'C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version14\Debug\vc100.pdb'; linking object as if no debug info
+     1>tinyxmld_STL.lib(tinyxmlerror.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxmld_STL.lib(tinyxmlerror.obj)' or at 'C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version14\Debug\vc100.pdb'; linking object as if no debug info
+     1>tinyxmld_STL.lib(tinyxmlparser.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxmld_STL.lib(tinyxmlparser.obj)' or at 'C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version14\Debug\vc100.pdb'; linking object as if no debug info
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\WaterSim.exe.embed.manifest" /manifest Debug\WaterSim.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         PositionBasedDynamics.vcxproj -> C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version14\Debug\WaterSim.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\WaterSim.unsuccessfulbuild".
+         Touching "Debug\WaterSim.lastbuildstate".
+     1>Done Building Project "C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version14\PositionBasedDynamics\PositionBasedDynamics.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.32
