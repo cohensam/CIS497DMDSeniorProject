@@ -62,7 +62,7 @@ void printShaderInfoLog(int shader);
 void export_particles(string path, int frame, const WaterSim ws, float radius) {
    //Write the output
    std::stringstream strout;
-   strout << path << "1000_grain_particles_" << frame << ".txt";
+   strout << path << "1000_grain_particles_1_c_" << frame << ".txt";
    string filepath = strout.str();
    
    ofstream outfile(filepath.c_str());
@@ -75,10 +75,26 @@ void export_particles(string path, int frame, const WaterSim ws, float radius) {
    outfile.close();
 }
 
+void export_high_res_particles(string path, int frame, const WaterSim ws, float radius) {
+   //Write the output
+   std::stringstream strout;
+   strout << path << "6000_high_res_particles_1_c_" << frame << ".txt";
+   string filepath = strout.str();
+   
+   ofstream outfile(filepath.c_str());
+   //write vertex count and particle radius
+   outfile << /*ws.particleList.size()*/ws.granularParticleNum*6000 << " " << radius << std::endl;
+   //write vertices
+   for(unsigned int i = ws.granularParticleNum; i < ws.granularParticleNum*6/*ws.particleList.size()*/; ++i) {
+      outfile << ws.particleList.pos(i)[0] << " " << ws.particleList.pos(i)[1] << " " << ws.particleList.pos(i)[2] << std::endl;
+   }
+   outfile.close();
+}
+
 void export_water_particles(string path, int frame, const WaterSim ws, float radius) {
    //Write the output
    std::stringstream strout;
-   strout << path << "1000_water_particles_" << frame << ".txt";
+   strout << path << "1000_water_particles_1_c" << frame << ".txt";
    string filepath = strout.str();
    
    ofstream outfile(filepath.c_str());
@@ -460,6 +476,7 @@ int main(int argc, char** argv)
         if(!pause && record) {
             grabScreen();
 			export_particles("output/", frame_num, ws, ws.particleRad);
+			export_high_res_particles("output/", frame_num, ws, ws.particleRad/2.0f);
 			export_water_particles("output/", frame_num, ws, ws.particleRad);
 		}
         frame_num++;

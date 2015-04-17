@@ -49,6 +49,7 @@ struct ParticleList
 		m_cluster_num.clear();
 
 		m_wet.clear();
+		m_prev_wet.clear();
 		m_bridge.clear();
 		m_rad.clear();
     }
@@ -122,6 +123,8 @@ struct ParticleList
 
 		m_wet.clear();
 		m_wet.resize(size);
+		m_prev_wet.clear();
+		m_prev_wet.resize(size);
 		m_bridge.clear();
 		m_bridge.resize(size);
 		m_rad.clear();
@@ -490,6 +493,18 @@ struct ParticleList
         return m_wet[n];
     }
 
+	//previous wetness accessor
+	 const float& prev_wet(unsigned int n) const
+    {
+        assert(n < m_size);
+        return m_prev_wet[n];
+    }
+    float& prev_wet(unsigned int n)
+    {
+        assert(n < m_size);
+        return m_prev_wet[n];
+    }
+
 	// bridge
 	const glm::vec3& bridge(unsigned int n) const
     {
@@ -586,6 +601,8 @@ protected:
 
 	//wetness
 	std::vector<float> m_wet;
+	//previous wetness
+	std::vector<float> m_prev_wet;
 	//liquidbridge force
 	std::vector<glm::vec3> m_bridge;
 	//radius

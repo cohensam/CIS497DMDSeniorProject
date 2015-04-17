@@ -114,7 +114,7 @@ void WaterSim::initialize() {
 		{
 			for (float k = 0; k < /*4*//*3.2*/lim; k+=(2*particleRad))
 			{
-				particleList.pos(pos) = glm::vec3(i-0.5f,j+0.2f,k+1.0f);//glm::vec3(i-0.5f,j+4.15f,k-0.5f);0.2
+				particleList.pos(pos) = glm::vec3(i-0.5f,j+0.2f,k+1.0f);//glm::vec3(i-0.5f,j+0.2f,k-0.5f);//0.2
 				pos++;
 			}
 		}
@@ -147,7 +147,7 @@ void WaterSim::initialize() {
 		particleList.set_mass(i, rho_0*(4.0f/3.0f)*PI*pow(particleRad,3));
 		particleList.wet(i) = 1.0f;
 	}
-
+	
 	lim = 2*10*particleRad; 
 	for (float i = 0; i < /*4*//*3.2*/lim; i+=(2*particleRad)) 
 	{
@@ -527,7 +527,7 @@ void WaterSim::particleToSphere() {
 	dots.clear(); 
 	Sphere* s;
 	glm::vec3 tempy = glm::vec3(0.0f);
-	dots.resize(particleList.size());//particleNum+7*particleNum+1000);
+	dots.resize(particleList.size());
 	for (int i = 0; i < dots.size(); i++) {
 		
 		tempy = glm::vec3(abs(particleList.vel(i).x/glm::length(particleList.vel(i))), abs(particleList.vel(i).y/glm::length(particleList.vel(i))), abs(particleList.vel(i).z/glm::length(particleList.vel(i))));
@@ -899,7 +899,7 @@ void WaterSim::calculateDiscreteParticleForces(int i, vector<int> nbrs) {
 	glm::vec3 Vn = glm::vec3(0,0,0);
 	glm::vec3 Fs = glm::vec3(0,0,0);
 	glm::vec3 Fd = glm::vec3(0,0,0);
-	float Kt = 0.6f;
+	float Kt = 0.01f;
 	float Ks = 0.000001f;
 
 	float R1 = particleRad;
@@ -933,7 +933,7 @@ void WaterSim::calculateDiscreteParticleForces(int i, vector<int> nbrs) {
 		if (particleList.type(nbrs[j]) != 0 && particleList.type(nbrs[j]) != 4) {
 
 			//Meff = particleList.mass(i)*particleList.mass(nbrs[j])/(particleList.mass(i)+particleList.mass(nbrs[j])+0.000001f);
-			Kd = 1.0f;//2.0f*Meff*(-log(e)/tc);
+			Kd = 0.4f;//1.0f;//2.0f*Meff*(-log(e)/tc);
 
 			X2 = particleList.predicted_pos(nbrs[j]);
 			V2 = particleList.predicted_vel(nbrs[j]);
@@ -1020,16 +1020,19 @@ void WaterSim::testYieldandCohesion(int i, float dt) {
 	if (particleList.type(i) != 4 && particleList.type(i) != 0) {
 		/*I do not understand how any of this actually is meant to be used
 		to change the stress value*/
-		float alpha = 0.2f;//0.5f;//sqrt(2.0f/3.0f)*sin(angleRepose);
+		float alpha = 0.0001f;//0.5f;//sqrt(2.0f/3.0f)*sin(angleRepose);
 		/*if (glm::length(particleList.stress(i)) <= alpha*glm::length(particleList.press(i))) {
 			//particleList.stress(i) = glm::vec3(0,0,0);//alpha*particleList.press(i);
 			particleList.rigid(i) = 1;
 		}*/
 		//PRESSURE SEEMS TO CONSISTENTLY BE 0
-		if (particleList.stress(i) <= alpha*particleList.press(i) && particleList.type(i) != 5 && particleList.type(i) != 0 && particleList.type(i) != 4) {
+		if (particleList.stress(i) <= alpha*particleList.press(i) && particleList.type(i) != 5 && particleList.type(i) != 0 && particleList.type(i) != 4 && particleList.wet(i) < Wmax) {
 			particleList.rigid(i) = 1;
 			//particleList.vel(i) = glm::vec3(0,0,0);
 			//particleList.predicted_pos(i) = particleList.pos(i)+dt*particleList.predicted_vel(i);
+		} else {
+			particleList.rigid(i) = 0;
+			particleList.cluster_num(i) = -1;
 		}
 
 		//s = s + corr_s;
@@ -1050,6 +1053,9 @@ void WaterSim::testYieldandCohesion(int i, float dt) {
 }
 
 void WaterSim::assignRigidClusters() {
+
+	rigidClusters.clear();
+
 	for (int i = 0; i < particleList.size(); i++) {
 		if (particleList.type(i) != 4) {
 			if (particleList.rigid(i) == 1) {//IS RIGID
@@ -1190,6 +1196,7 @@ void WaterSim::assignRigidBodyVelocity(float dt) {
 	vector<glm::vec3> d;
 	vector<glm::vec3> vi;
 	vector<glm::vec3> p;
+	vector<glm::vec3> b;
 	vector<float> n;
 	for (int i = 0; i < rigidClusters.size(); i++) {
 		glm::vec3 fricohsum;
@@ -1198,6 +1205,7 @@ void WaterSim::assignRigidBodyVelocity(float dt) {
 		glm::vec3 gravsum;
 		glm::vec3 psum;
 		glm::vec3 vel;
+		glm::vec3 bsum;
 		int num = 0;
 		for (int j = 0; j < rigidClusters[i].size(); j++) {
 			fricohsum += particleList.fricoh(rigidClusters[i][j]);
@@ -1207,18 +1215,20 @@ void WaterSim::assignRigidBodyVelocity(float dt) {
 			gravsum += glm::vec3(0,-9.81,0);
 			vel += particleList.predicted_vel(rigidClusters[i][j]);
 			num += 1;
+			bsum += particleList.bridge(i);
 		}
 		f.push_back(fricohsum);///(rigidClusters[i].size()+0.000001f));
-		d.push_back(discsum);///(rigidClusters[i].size()+0.000001f));
+		d.push_back(discsum/(rigidClusters[i].size()+0.000001f));
 		vi.push_back(viscsum/(rigidClusters[i].size()+0.000001f));
 		p.push_back(psum/(rigidClusters[i].size()+0.000001f));
 		g.push_back(gravsum);
 		v.push_back(vel);
 		n.push_back(num);
+		b.push_back(bsum/(rigidClusters[i].size()+0.000001f));
 	}
 	for (int i = 0; i < rigidClusters.size(); i++) {
 		for (int j = 0; j < rigidClusters[i].size(); j++) {
-			particleList.predicted_vel(rigidClusters[i][j]) = v[i]/n[i];//particleList.vel(i) + dt * (d[i] + glm::vec3(0,-9.81,0) + f[i]);// + p[i] + vi[i]);//g[i]);// + d[i]);// + vi[i]);//v[i]/n[i];//1.0f/dt * (f[i]-rigidClustersForces[i]+glm::vec3(0,-9.8f,0));
+			particleList.predicted_vel(rigidClusters[i][j]) = glm::vec3(0,particleList.vel(i).y,0) + dt * glm::vec3(0,v[i].y/n[i],0);//(d[i] + glm::vec3(0,-9.81,0) + b[i]);//// + p[i] + vi[i]);//g[i]);// + d[i]);// + vi[i]);//v[i]/n[i];//1.0f/dt * (f[i]-rigidClustersForces[i]+glm::vec3(0,-9.8f,0));
 			particleList.predicted_pos(rigidClusters[i][j]) = particleList.pos(rigidClusters[i][j]) + dt * particleList.predicted_vel(rigidClusters[i][j]);
 		}
 	}
@@ -1303,6 +1313,8 @@ void WaterSim::update(const Scene* const scene, float dt) {
 			particleList.stress(i) = 0.0f;//glm::vec3(0,0,0);
 			particleList.press_force(i) = glm::vec3(0,0,0);
 			particleList.fricoh(i) = glm::vec3(0,0,0);
+			//particleList.rigid(i) = 0;
+			//particleList.cluster_num(i) = -1;
 		//}
 	} 
 
@@ -1373,10 +1385,12 @@ void WaterSim::update(const Scene* const scene, float dt) {
 		applyXSPH(particleList.predicted_pos(i), nbrRadius, i, particleList.nbr(i));
 		collision_detection(i, scene);
 		particleList.pos(i) = particleList.predicted_pos(i);
-		
-		disperseWaterWetness(particleList.predicted_pos(i),nbrRadius,i,particleList.nbr(i));
-		disperseGranularWetness(particleList.predicted_pos(i),nbrRadius,i,particleList.nbr(i));
-
+		if (particleList.type(i) == 4) {
+			disperseWaterWetness(particleList.predicted_pos(i),nbrRadius,i,particleList.nbr(i));
+		} else {
+			disperseGranularWetness(particleList.predicted_pos(i),nbrRadius,i,particleList.nbr(i));
+		}
+		//particleList.prev_wet(i) = particleList.wet(i);
 		//Assign new particle wetness value
 		//Kp is speed of propagation
 		//Larger Kp will yield faster propagation of wetness while lower Kp will yield lower propagation of wetness
@@ -1385,7 +1399,11 @@ void WaterSim::update(const Scene* const scene, float dt) {
 			if (deltaW < 0) {
 				deltaW = 0;
 			}
-			particleList.wet(i) = particleList.wet(i) + Kp*((deltaW)/(particleList.nbr(i).size()+0.000001f))*dt;
+			if (particleList.wet(i) + Kp*((deltaW)/(particleList.nbr(i).size()+0.000001f))*dt <= Wmax) {
+				particleList.wet(i) = particleList.wet(i) + Kp*((deltaW)/(particleList.nbr(i).size()+0.000001f))*dt;
+			} else {
+				particleList.wet(i) = Wmax;
+			}
 		}
 	}
 
@@ -1411,10 +1429,10 @@ void WaterSim::updateSpheres() {
 		dots[i]->m_center = particleList.pos(i);
 		dots[i]->mat_color = glm::vec3(abs(particleList.vel(i).x/glm::length(particleList.vel(i))), abs(particleList.vel(i).y/glm::length(particleList.vel(i))), abs(particleList.vel(i).z/glm::length(particleList.vel(i))));
 		if (particleList.type(i) == 4) {
-			dots[i]->mat_color = glm::vec3(0,0,1);
-		} else {
+			dots[i]->mat_color = glm::vec3(0,1,1);
+		} /*else {
 			dots[i]->mat_color = glm::vec3(sqrt(pow(particleList.wet(i),2.0f)), sqrt(pow(particleList.wet(i),2.0f)), sqrt(pow(particleList.wet(i),2.0f)));
-		}
+		}*/
 		dots[i]->update();
 	}
 }
@@ -1422,7 +1440,7 @@ void WaterSim::updateSpheres() {
 void WaterSim::resolve_constraints(const Scene* const scene) {
 	for (unsigned int iter = 0; iter < solverIterations; ++iter) {
 		//For all particles
-		for (int i = 0; i < particleList.size(); i++) {
+		for (int i = 0; i < particleList.size()/*granularParticleNum*/; i++) {
 			//Calculate lambda
 			//MOST TIME DRAIN HERE
 			if (particleList.type(i) != 5) {
@@ -1430,7 +1448,7 @@ void WaterSim::resolve_constraints(const Scene* const scene) {
 			}
 		}
 		//For all particles
-		for (int i = 0; i < particleList.size(); i++) {
+		for (int i = 0; i < particleList.size()/*granularParticleNum*/; i++) {
 			//Calculate deltaP
 			if (particleList.type(i) != 5) {
 				particleList.deltaP(i) = calculateDeltaP(i); 
@@ -1447,7 +1465,7 @@ void WaterSim::resolve_constraints(const Scene* const scene) {
 			//resolve_collisions(); 
 		}
 		//For all particles
-		for (int i = 0; i < particleList.size(); i++) {
+		for (int i = 0; i < particleList.size()/*granularParticleNum*/; i++) {
 			//Update position Xi* = Xi* + deltaP
 			if (particleList.type(i) != 5) {
 				particleList.predicted_pos(i) = particleList.predicted_pos(i) + particleList.deltaP(i);
