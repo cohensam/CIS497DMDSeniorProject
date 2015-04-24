@@ -78,14 +78,14 @@ void export_particles(string path, int frame, const WaterSim ws, float radius) {
 void export_high_res_particles(string path, int frame, const WaterSim ws, float radius) {
    //Write the output
    std::stringstream strout;
-   strout << path << "6000_high_res_particles_1_c_" << frame << ".txt";
+   strout << path << "7000_high_res_particles_1_c_" << frame << ".txt";
    string filepath = strout.str();
    
    ofstream outfile(filepath.c_str());
    //write vertex count and particle radius
-   outfile << /*ws.particleList.size()*/ws.granularParticleNum*6000 << " " << radius << std::endl;
+   outfile << /*ws.particleList.size()*/ws.granularParticleNum*7 << " " << radius << std::endl;
    //write vertices
-   for(unsigned int i = ws.granularParticleNum; i < ws.granularParticleNum*6/*ws.particleList.size()*/; ++i) {
+   for(unsigned int i = ws.granularParticleNum; i < ws.granularParticleNum+ws.granularParticleNum*7/*ws.particleList.size()*/; ++i) {
       outfile << ws.particleList.pos(i)[0] << " " << ws.particleList.pos(i)[1] << " " << ws.particleList.pos(i)[2] << std::endl;
    }
    outfile.close();
@@ -94,15 +94,23 @@ void export_high_res_particles(string path, int frame, const WaterSim ws, float 
 void export_water_particles(string path, int frame, const WaterSim ws, float radius) {
    //Write the output
    std::stringstream strout;
-   strout << path << "1000_water_particles_1_c" << frame << ".txt";
+   strout << path << "2000_water_particles_1_c" << frame << ".txt";
    string filepath = strout.str();
    
    ofstream outfile(filepath.c_str());
    //write vertex count and particle radius
-   outfile << 1000/*ws.particleList.size()*/ << " " << radius << std::endl;
+   int count = 0;
+   for (int i = ws.granularParticleNum+ws.granularParticleNum*7; i < ws.particleList.size(); ++i) {
+	   if (ws.particleList.type(i) == 4) {
+		   count++;
+	   }
+   }
+   outfile << count/*2000*//*ws.particleList.size()*/ << " " << radius << std::endl;
    //write vertices
-   for(unsigned int i = ws.granularParticleNum; i < ws.particleList.size(); ++i) {//unsigned int i = 0; i < ws.particleList.size(); ++i)
-      outfile << ws.particleList.pos(i)[0] << " " << ws.particleList.pos(i)[1] << " " << ws.particleList.pos(i)[2] << std::endl;
+   for(unsigned int i = ws.granularParticleNum+ws.granularParticleNum*7; i < ws.particleList.size(); ++i) {//unsigned int i = 0; i < ws.particleList.size(); ++i)
+      if (ws.particleList.type(i) == 4) {
+		  outfile << ws.particleList.pos(i)[0] << " " << ws.particleList.pos(i)[1] << " " << ws.particleList.pos(i)[2] << std::endl;
+	  }
    }
    outfile.close();
 }

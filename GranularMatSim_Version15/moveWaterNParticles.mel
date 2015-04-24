@@ -1,22 +1,24 @@
-global proc moveWaterNParticles(int $i_frame_max, int $particle_num)
+global proc moveWaterNParticles(int $i_frame_max, string $filename)
 {
 	for( $i=1; $i<$i_frame_max; $i++ )
 	{
-		$water_file = "C:/Users/Samantha/Documents/CIS 497 DMD Senior Project/GranularMatSim_Version9/PositionBasedDynamics/output/1000_grain_particles_" + $i + ".txt";
+		$water_file = $filename + $i + ".txt";
 		$file = `fopen $water_file "r"`;
 		string $nextLine = `fgetline $file`;
+		string $rawAnimArray1[];
+		tokenize ($nextLine, " ", $rawAnimArray1);
+		int $particle_num = $rawAnimArray1[0];
 
 		$meshes = `ls -type "mesh"`;
 		
 		string $nParticleShape = "nParticleShape" + $i;
 		string $cmd = "nParticle -sn \"Balls\"";
-		for( $j = 1; $j < $particle_num; $j++ )
+		for( $j = 0; $j < $particle_num; $j++ )
 		{
 			string $rawAnimArray[];
 			$nextLine = `fgetline $file`;
 			tokenize ($nextLine, " ", $rawAnimArray);
 			$cmd += " -p " + $rawAnimArray[0] + " " + $rawAnimArray[1] + " " + $rawAnimArray[2];
-			
 		}	
 		$cmd += ";";
 		print($cmd);
@@ -61,4 +63,4 @@ global proc moveWaterNParticles(int $i_frame_max, int $particle_num)
 	}
 };
 
-moveWaterNParticles(10,1000);
+moveWaterNParticles(600, "C:/Users/Samantha/Documents/CIS 497 DMD Senior Project/GranularMatSim_Version15/PositionBasedDynamics/output/Yellow c/1000_water_particles_1_c");

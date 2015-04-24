@@ -1,92 +1,18 @@
-﻿Build started 4/17/2015 2:51:38 PM.
+﻿Build started 4/22/2015 3:05:12 AM.
      1>Project "C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\PositionBasedDynamics\PositionBasedDynamics.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\WaterSim.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../tinyxml /I../glm /I../glew/include /I../glfw/include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\WaterSim.cpp
-         WaterSim.cpp
-     1>Source\WaterSim.cpp(102): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(128): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(144): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(147): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(179): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(372): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(509): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(512): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(524): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(531): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(620): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(693): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(738): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(745): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(755): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(767): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(775): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(783): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(793): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(807): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(844): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(866): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(887): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(932): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(981): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(987): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1004): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1059): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1064): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1067): warning C4244: 'argument' : conversion from 'float' to 'const int', possible loss of data
-     1>Source\WaterSim.cpp(1072): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1081): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1083): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1086): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1089): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1091): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1093): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1110): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1119): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1121): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1124): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1128): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1130): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1145): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1149): warning C4244: 'argument' : conversion from 'float' to 'const int', possible loss of data
-     1>Source\WaterSim.cpp(1154): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1163): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1165): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1167): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1170): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1172): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1174): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1201): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1210): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1226): warning C4244: 'argument' : conversion from 'int' to 'const float', possible loss of data
-     1>Source\WaterSim.cpp(1229): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1230): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1244): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1256): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1261): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1280): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1285): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1299): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1305): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1325): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1339): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1381): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1410): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1413): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1428): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1441): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1443): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1451): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1468): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1480): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1485): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1494): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1497): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1503): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>Source\WaterSim.cpp(1511): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1539): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\WaterSim.cpp(1560): warning C4018: '<' : signed/unsigned mismatch
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../tinyxml /I../glm /I../glew/include /I../glfw/include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\main.cpp
+         main.cpp
+     1>Source\main.cpp(72): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\main.cpp(88): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\main.cpp(103): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\main.cpp(473): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\main.cpp(494): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>Source\main.cpp(515): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
          All outputs are up-to-date.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\WaterSim.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:../glew/lib /LIBPATH:../glfw/lib /LIBPATH:../tinyxml tinyxml_STL.lib glew32.lib glu32.lib opengl32.lib glfw.lib glfwdll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\WaterSim.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\WaterSim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\WaterSim.lib" /MACHINE:X86 Release\constraint.obj
@@ -114,4 +40,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.79
+Time Elapsed 00:00:04.95

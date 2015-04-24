@@ -74,7 +74,7 @@ WaterSim::WaterSim() {
 	//2000 for dry sand
 	rho_0 = 2000; 
 
-	particleList.resize(particleNum+7*particleNum+1000);
+	particleList.resize(particleNum+7*particleNum+2000);
 
 	 //density of water is 1000 kg/m^3 = 1 g/cm^3
 	 //particle has volume: (4/3)pi*0.1^3 = 0.004189
@@ -153,7 +153,7 @@ void WaterSim::initialize() {
 	{
 		for (float j = 0; j < /*4*//*3.2*/lim; j+=(2*particleRad))
 		{
-			for (float k = 0; k < /*4*//*3.2*/lim; k+=(2*particleRad))
+			for (float k = 0; k < /*4*//*3.2*//*lim*/2*20*particleRad; k+=(2*particleRad))
 			{
 				particleList.pos(id) = glm::vec3(i-0.5f,j+4.15f,k-2.0f);//glm::vec3(i-0.5f,j+4.15f,k-0.5f);0.2
 				id++;
@@ -899,7 +899,7 @@ void WaterSim::calculateDiscreteParticleForces(int i, vector<int> nbrs) {
 	glm::vec3 Vn = glm::vec3(0,0,0);
 	glm::vec3 Fs = glm::vec3(0,0,0);
 	glm::vec3 Fd = glm::vec3(0,0,0);
-	float Kt = 0.01f;
+	float Kt = 1.0f;//0.01f;
 	float Ks = 0.000001f;
 
 	float R1 = particleRad;
@@ -1020,7 +1020,7 @@ void WaterSim::testYieldandCohesion(int i, float dt) {
 	if (particleList.type(i) != 4 && particleList.type(i) != 0) {
 		/*I do not understand how any of this actually is meant to be used
 		to change the stress value*/
-		float alpha = 0.0001f;//0.5f;//sqrt(2.0f/3.0f)*sin(angleRepose);
+		float alpha = 0.0001f;//0.5f;//0.5f;//sqrt(2.0f/3.0f)*sin(angleRepose);
 		/*if (glm::length(particleList.stress(i)) <= alpha*glm::length(particleList.press(i))) {
 			//particleList.stress(i) = glm::vec3(0,0,0);//alpha*particleList.press(i);
 			particleList.rigid(i) = 1;
@@ -1217,18 +1217,18 @@ void WaterSim::assignRigidBodyVelocity(float dt) {
 			num += 1;
 			bsum += particleList.bridge(i);
 		}
-		f.push_back(fricohsum);///(rigidClusters[i].size()+0.000001f));
-		d.push_back(discsum/(rigidClusters[i].size()+0.000001f));
+		f.push_back(fricohsum);//(rigidClusters[i].size()+0.000001f));
+		d.push_back(discsum);///(rigidClusters[i].size()+0.000001f));
 		vi.push_back(viscsum/(rigidClusters[i].size()+0.000001f));
 		p.push_back(psum/(rigidClusters[i].size()+0.000001f));
 		g.push_back(gravsum);
 		v.push_back(vel);
 		n.push_back(num);
-		b.push_back(bsum/(rigidClusters[i].size()+0.000001f));
+		b.push_back(bsum);///(rigidClusters[i].size()+0.000001f));
 	}
 	for (int i = 0; i < rigidClusters.size(); i++) {
 		for (int j = 0; j < rigidClusters[i].size(); j++) {
-			particleList.predicted_vel(rigidClusters[i][j]) = glm::vec3(0,particleList.vel(i).y,0) + dt * glm::vec3(0,v[i].y/n[i],0);//(d[i] + glm::vec3(0,-9.81,0) + b[i]);//// + p[i] + vi[i]);//g[i]);// + d[i]);// + vi[i]);//v[i]/n[i];//1.0f/dt * (f[i]-rigidClustersForces[i]+glm::vec3(0,-9.8f,0));
+			particleList.predicted_vel(rigidClusters[i][j]) = glm::vec3(0,particleList.vel(i).y,0) + dt * (d[i] + glm::vec3(0,-9.81,0) + b[i]);//glm::vec3(0,v[i].y/n[i],0);//(d[i] + glm::vec3(0,-9.81,0) + b[i]);//// + p[i] + vi[i]);//g[i]);// + d[i]);// + vi[i]);//v[i]/n[i];//1.0f/dt * (f[i]-rigidClustersForces[i]+glm::vec3(0,-9.8f,0));
 			particleList.predicted_pos(rigidClusters[i][j]) = particleList.pos(rigidClusters[i][j]) + dt * particleList.predicted_vel(rigidClusters[i][j]);
 		}
 	}
@@ -1239,7 +1239,7 @@ void WaterSim::assignRigidBodyVelocity(float dt) {
 void WaterSim::interpolateBridge(glm::vec3 R, float h, int i, vector<int> nbrs) {//ONLY FOR WET GRANULAR PARTICLES
 	glm::vec3 As = glm::vec3(0,0,0);
 	glm::vec3 temp;
-	float k_bridge = 0.6f;
+	float k_bridge = 0.1f;//0.6f;
 	float Wf = 1.0f;
 	for (int j = 0; j < nbrs.size(); j++) {
 		if ((particleList.type(nbrs[j]) == 1 || particleList.type(nbrs[j]) == 5) && particleList.wet(i) > 0 //low or high res granular
@@ -1264,7 +1264,9 @@ void WaterSim::disperseWaterWetness(glm::vec3 R, float h, int i, vector<int> nbr
 		}	
 	}
 	//particle should then disappear, so in future if an index is in the following vector it cannot be used and will no longer be updated
-	//particleList.type(i) = 0;
+	if (count > nbrs.size()/2.0f) {
+		particleList.type(i) = 0;
+	}
 	//dispersedWaterParticles.push_back(i);
 	/*
 	if(std::find(dispersedWaterParticles.begin(), dispersedWaterParticles.end(), i) != dispersedWaterParticles.end()) {
@@ -1430,9 +1432,9 @@ void WaterSim::updateSpheres() {
 		dots[i]->mat_color = glm::vec3(abs(particleList.vel(i).x/glm::length(particleList.vel(i))), abs(particleList.vel(i).y/glm::length(particleList.vel(i))), abs(particleList.vel(i).z/glm::length(particleList.vel(i))));
 		if (particleList.type(i) == 4) {
 			dots[i]->mat_color = glm::vec3(0,1,1);
-		} /*else {
-			dots[i]->mat_color = glm::vec3(sqrt(pow(particleList.wet(i),2.0f)), sqrt(pow(particleList.wet(i),2.0f)), sqrt(pow(particleList.wet(i),2.0f)));
-		}*/
+		} else {
+			dots[i]->mat_color = glm::vec3(1.0f-sqrt(pow(particleList.wet(i),2.0f)), 1.0f-sqrt(pow(particleList.wet(i),2.0f)), 0);//sqrt(pow(particleList.wet(i),2.0f)));
+		}
 		dots[i]->update();
 	}
 }
@@ -1508,6 +1510,13 @@ void WaterSim::applyXSPH(glm::vec3 R, float h, int i, vector<int> nbrs) {
 	glm::vec3 temp;
 	float norm = 0;
 	float c = 0.01f;//0.1f;//0.1f;//0.01;
+	if (particleList.type(i) != 4 && particleList.type(i) != 0) {
+		if (particleList.wet(i) < Wthreshold) {
+			c = 0.3f;
+		} else {
+			c = 0.05f;
+		}
+	}
 	for (int j = 0; j < nbrs.size(); j++) {
 		if (particleList.type(nbrs[j]) != 0) {
 			temp = R-particleList.predicted_pos(nbrs[j]);
