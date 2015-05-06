@@ -1,22 +1,22 @@
 //file -import -type "OBJ" -pr "C:/Users/Samantha/Documents/CIS 497 DMD Senior Project/Obj Files/grain1.obj"; //polySurface1
 
-for( $i=1; $i<1001; $i++ )//$i = 3; $i < 1003; $i++)//
+for( $i=1001; $i<8001; $i++ )
 	{
 		polySphere;
 		//duplicate polySurface1;
 		$meshes = `ls -type "mesh"`;
-		$mesh = "pSphere" + $i;
+		$mesh = "slanted_plane:pSphere" + $i;
 		//$mesh = "polySurface" + $i;
-		setAttr ($mesh+".scaleX") 0.1;
-		setAttr ($mesh+".scaleY") 0.1;
-		setAttr ($mesh+".scaleZ") 0.1;
+		setAttr ($mesh+".scaleX") 0.05;
+		setAttr ($mesh+".scaleY") 0.05;
+		setAttr ($mesh+".scaleZ") 0.05;
 	};
 	
 //delete polySurface1;
 
-for( $i=1; $i<490; $i++ )
+for( $i=1; $i<201; $i++ )
 	{
-		$water_file = "C:/Users/Samantha/Documents/CIS 497 DMD Senior Project/GranularMatSim_Version9/PositionBasedDynamics/output/1000_grain_particles_" + $i + ".txt";
+		$water_file = "C:/Users/Samantha/Documents/CIS 497 DMD Senior Project/GranularMatSim_Version15/PositionBasedDynamics/output/Sand and Water Slant/7000_high_res_particles_slant_" + $i + ".txt";
 		$file = `fopen $water_file "r"`;
 	    $temp=(int)$i;
 		currentTime $temp;
@@ -26,9 +26,9 @@ for( $i=1; $i<490; $i++ )
 		int $particle_num = $rawAnimArray1[0];
 		float $particle_rad = $rawAnimArray1[1];
 		$meshes = `ls -type "mesh"`;
-		for( $j = 1; $j < 1001; $j++ )//$j = 3; $j < 1003; $j++)//
+		for( $j = 1001; $j < 8001; $j++ )
 		{
-			$mesh = "pSphere" + $j;
+			$mesh = "slanted_plane:pSphere" + $j;
 			//$mesh = "polySurface" + $j;
 			string $rawAnimArray[];
 			$nextLine = `fgetline $file`;

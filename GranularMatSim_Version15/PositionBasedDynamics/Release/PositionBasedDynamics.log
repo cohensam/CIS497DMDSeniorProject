@@ -1,38 +1,13 @@
-﻿Build started 4/22/2015 3:05:12 AM.
+﻿Build started 5/5/2015 11:18:24 PM.
      1>Project "C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\PositionBasedDynamics\PositionBasedDynamics.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\WaterSim.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../tinyxml /I../glm /I../glew/include /I../glfw/include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\main.cpp
-         main.cpp
-     1>Source\main.cpp(72): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\main.cpp(88): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\main.cpp(103): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\main.cpp(473): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\main.cpp(494): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>Source\main.cpp(515): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+         All outputs are up-to-date.
          All outputs are up-to-date.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\WaterSim.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:../glew/lib /LIBPATH:../glfw/lib /LIBPATH:../tinyxml tinyxml_STL.lib glew32.lib glu32.lib opengl32.lib glfw.lib glfwdll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\WaterSim.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\WaterSim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\WaterSim.lib" /MACHINE:X86 Release\constraint.obj
-         Release\main.obj
-         Release\point.obj
-         Release\scene.obj
-         Release\sphere.obj
-         Release\stb_image.obj
-         Release\stb_image_write.obj
-         Release\triangle.obj
-         Release\vec.obj
-         Release\WaterSim.obj
-         Generating code
-         Finished generating code
-     1>tinyxml_STL.lib(tinyxml.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml_STL.lib(tinyxml.obj)' or at 'C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\vc100.pdb'; linking object as if no debug info
-     1>tinyxml_STL.lib(tinyxmlerror.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml_STL.lib(tinyxmlerror.obj)' or at 'C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\vc100.pdb'; linking object as if no debug info
-     1>tinyxml_STL.lib(tinyxmlparser.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml_STL.lib(tinyxmlparser.obj)' or at 'C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\vc100.pdb'; linking object as if no debug info
+         All outputs are up-to-date.
          PositionBasedDynamics.vcxproj -> C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\WaterSim.exe
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Samantha\Documents\CIS 497 DMD Senior Project\GranularMatSim_Version15\Release\WaterSim.exe;#1" /manifest Release\WaterSim.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Release\WaterSim.unsuccessfulbuild".
          Touching "Release\WaterSim.lastbuildstate".
@@ -40,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.95
+Time Elapsed 00:00:00.20

@@ -63,4 +63,4 @@ global proc moveWaterNParticles(int $i_frame_max, string $filename)
 	}
 };
 
-moveWaterNParticles(600, "C:/Users/Samantha/Documents/CIS 497 DMD Senior Project/GranularMatSim_Version15/PositionBasedDynamics/output/Yellow c/1000_water_particles_1_c");
+moveWaterNParticles(201, "C:/Users/Samantha/Documents/CIS 497 DMD Senior Project/GranularMatSim_Version15/PositionBasedDynamics/output/Sand and Water Slant/2000_water_particles_slant_");

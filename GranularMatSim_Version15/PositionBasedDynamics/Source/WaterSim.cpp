@@ -42,7 +42,7 @@ WaterSim::WaterSim() {
 	nodal_solid_phi.resize(ni+1,nj+1,nk+1); 
 	liquid_phi.resize(ni,nj,nk);*/
 
-	/*if ((particleNum == 8000 && particleRad == 0.1f) || particleNum == 8000+3375 || particleNum == 16000)
+	if ((particleNum == 8000 && particleRad == 0.1f) || particleNum == 8000+3375 || particleNum == 16000)
 	{
 		xmin = -3.0f;
 		xmax = 4.0f;
@@ -57,7 +57,7 @@ WaterSim::WaterSim() {
 		ymax =  10.0f;//20.0f;
 		zmin =  -6.0f;//-10.0f; 
 		zmax =  6.0f; //10.0f; 
-	}*/
+	}
 
 	nbrRadius = 3*particleRad;
 	gridXmin = -20.0f;
@@ -86,7 +86,7 @@ WaterSim::~WaterSim() {
 }
 
 void WaterSim::initialize() {
-    for(int i = 0; i < /*particleNum*/1000; ++i)
+    for(int i = 0; i < /*particleNum*/8000; ++i)
 	{
 		//Set original velocity of each particle
         particleList.vel(i) = glm::vec3(0.0f);
@@ -114,7 +114,7 @@ void WaterSim::initialize() {
 		{
 			for (float k = 0; k < /*4*//*3.2*/lim; k+=(2*particleRad))
 			{
-				particleList.pos(pos) = glm::vec3(i-0.5f,j+0.2f,k+1.0f);//glm::vec3(i-0.5f,j+0.2f,k-0.5f);//0.2
+				particleList.pos(pos) = glm::vec3(i-0.5f,j+1.2f,k+-0.5f);//glm::vec3(i-0.5f,j+0.2f,k-0.5f);//0.2
 				pos++;
 			}
 		}
@@ -136,10 +136,10 @@ void WaterSim::initialize() {
 		particleList.pos(id+4) = glm::vec3(particleList.pos(i).x, particleList.pos(i).y-particleRad, particleList.pos(i).z);
 		particleList.pos(id+5) = glm::vec3(particleList.pos(i).x, particleList.pos(i).y, particleList.pos(i).z+particleRad);
 		particleList.pos(id+6) = particleList.pos(i);
-
+	
 		id+=7;
 	}
-
+	
 	//SET UP WATER PARTICLES
 	for (int i = id; i < particleList.size(); i++) {
 		particleList.type(i) = 4;
@@ -155,7 +155,7 @@ void WaterSim::initialize() {
 		{
 			for (float k = 0; k < /*4*//*3.2*//*lim*/2*20*particleRad; k+=(2*particleRad))
 			{
-				particleList.pos(id) = glm::vec3(i-0.5f,j+4.15f,k-2.0f);//glm::vec3(i-0.5f,j+4.15f,k-0.5f);0.2
+				particleList.pos(id) = glm::vec3(i-0.5f,j+4.15f,k-0.5f);//glm::vec3(i-0.5f,j+4.15f,k-0.5f);0.2
 				id++;
 			}
 		}
@@ -900,7 +900,10 @@ void WaterSim::calculateDiscreteParticleForces(int i, vector<int> nbrs) {
 	glm::vec3 Fs = glm::vec3(0,0,0);
 	glm::vec3 Fd = glm::vec3(0,0,0);
 	float Kt = 1.0f;//0.01f;
-	float Ks = 0.000001f;
+	if (granularParticleNum == 8000) {
+		Kt = 0.005f;
+	}
+	float Ks = 0.000001f;//o.of;
 
 	float R1 = particleRad;
 	float R2 = particleRad;
@@ -917,15 +920,8 @@ void WaterSim::calculateDiscreteParticleForces(int i, vector<int> nbrs) {
 	glm::vec3 zetaDot = glm::vec3(0,0,0);
 	glm::vec3 Vt = glm::vec3(0,0,0);
 	glm::vec3 fn = glm::vec3(0,0,0);
-	float Meff = 0;
-	//Coefficient of restitution - avg. ish and for 38 degree ish 0.6
-	float e = 0.6f;
-	//Contact duration-this should be small but I am not sure quite how small so I guessed
-	float tc = 10000.0f;//100;//0.01f;
 	float Kd = 0;
-	float Kr = 0;
 	//Coefficient of friction for sand, number for general use 0.6
-	float mu = 0.6f;
 	glm::vec3 Fn = glm::vec3(0,0,0);
 	glm::vec3 Ft = glm::vec3(0,0,0);
 	glm::vec3 F = glm::vec3(0,0,0);
@@ -933,8 +929,11 @@ void WaterSim::calculateDiscreteParticleForces(int i, vector<int> nbrs) {
 		if (particleList.type(nbrs[j]) != 0 && particleList.type(nbrs[j]) != 4) {
 
 			//Meff = particleList.mass(i)*particleList.mass(nbrs[j])/(particleList.mass(i)+particleList.mass(nbrs[j])+0.000001f);
-			Kd = 0.4f;//1.0f;//2.0f*Meff*(-log(e)/tc);
-
+			if (granularParticleNum == 8000) {
+				Kd = 0.01f;//0.4f;//1.0f;//2.0f*Meff*(-log(e)/tc);
+			} else {
+				Kd = 0.4f;
+			}
 			X2 = particleList.predicted_pos(nbrs[j]);
 			V2 = particleList.predicted_vel(nbrs[j]);
 			N = X1-X2;
@@ -947,27 +946,6 @@ void WaterSim::calculateDiscreteParticleForces(int i, vector<int> nbrs) {
 			Ft = Kt*(1.0f+particleList.wet(i)+particleList.wet(nbrs[j]))*(Vt/(glm::length(Vt)+0.000001f));
 			Fn = Fs+Fd;
 			F += Fn+Ft;
-			//Calulate Fn
-			/*X2 = particleList.predicted_pos(nbrs[j]);
-			V2 = particleList.predicted_vel(nbrs[j]);
-			zeta = max(0.0f,glm::length(R1+R2-(X1-X2)));
-			N = X1-X2;
-			N /= (glm::length(N)+0.000001f);
-			V = V1-V2;
-			zetaDot = V * N;
-			Vt = V-zetaDot*N;
-			Meff = particleList.mass(i)*particleList.mass(nbrs[j])/(particleList.mass(i)+particleList.mass(nbrs[j])+0.000001f);
-			Kd = 2.0f*Meff*(-log(e)/tc);
-			Kr = (Meff/(pow(tc,2.0f)+0.000001f))*(pow(log(e),2.0f)+pow(3.14159f,2.0f));
-			fn = -Kd*pow(zeta,0.5f)*zetaDot-Kr*pow(zeta,3.0f/2.0f);
-			Fn = fn*(1.0f+particleList.wet(i)+particleList.wet(j))*N;
-
-			//Calculate Ft
-			Vt /= (glm::length(Vt)+0.000001f);
-			Ft = -mu*fn*(1.0f+particleList.wet(i)+particleList.wet(j))*Vt;
-
-			//Calculate F
-			F += Fn + Ft;*/
 		}
 	}
 	//Fn and Ft are undefined

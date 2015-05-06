@@ -14,7 +14,7 @@ int window_height = 768;
 bool pause = false;
 bool record = true;//false;
 bool flip_draw_mode = false;
-bool obj_draw_mode = false;//true; 
+bool obj_draw_mode = true; 
 
 //----------Time----------//
 double now, lastTime;
@@ -62,7 +62,7 @@ void printShaderInfoLog(int shader);
 void export_particles(string path, int frame, const WaterSim ws, float radius) {
    //Write the output
    std::stringstream strout;
-   strout << path << "1000_grain_particles_1_c_" << frame << ".txt";
+   strout << path << "1000_grain_particles_slant_3_" << frame << ".txt";
    string filepath = strout.str();
    
    ofstream outfile(filepath.c_str());
@@ -78,7 +78,7 @@ void export_particles(string path, int frame, const WaterSim ws, float radius) {
 void export_high_res_particles(string path, int frame, const WaterSim ws, float radius) {
    //Write the output
    std::stringstream strout;
-   strout << path << "7000_high_res_particles_1_c_" << frame << ".txt";
+   strout << path << "7000_high_res_particles_slant_2_" << frame << ".txt";
    string filepath = strout.str();
    
    ofstream outfile(filepath.c_str());
@@ -94,7 +94,7 @@ void export_high_res_particles(string path, int frame, const WaterSim ws, float 
 void export_water_particles(string path, int frame, const WaterSim ws, float radius) {
    //Write the output
    std::stringstream strout;
-   strout << path << "2000_water_particles_1_c" << frame << ".txt";
+   strout << path << "2000_water_particles_slant_" << frame << ".txt";
    string filepath = strout.str();
    
    ofstream outfile(filepath.c_str());
@@ -385,9 +385,9 @@ int main(int argc, char** argv)
 	WaterSim ws;
 	ws.initialize();
 
-	//ws.objLoader("slanted_plane.obj");
+	/*ws.objLoader("slanted_plane.obj");
 
-	/*vector<vec3> objMeshTriangles;
+	vector<vec3> objMeshTriangles;
 	vector<int> objMeshFaces;
 	vector<float> objMeshVertices;
 	ws.triangles.clear();
@@ -449,9 +449,9 @@ int main(int argc, char** argv)
 		m_indices.push_back(index + 1);
 		m_indices.push_back(index + 2);
 		index += 3;
-	}*/
-	//ws.compute_mesh_bounds(); 
-
+	}
+	ws.compute_mesh_bounds(); 
+	*/
 	
     lastTime = glfwGetTime();
     while(run)
@@ -475,17 +475,17 @@ int main(int argc, char** argv)
 				ws.dots[i]->draw(vbo_handle_dots);
 			}
 		}
-		if (obj_draw_mode) {
-			//ws.triangles[0]->draw(vbo_handle_obj, m_positions, m_colors, m_normals, m_indices);
-		}
+		/*if (obj_draw_mode) {
+			ws.triangles[0]->draw(vbo_handle_obj, m_positions, m_colors, m_normals, m_indices);
+		}*/
         deactivate_shaderprog(m_shaderprog_handle);
 
         drawAxes();
         if(!pause && record) {
             grabScreen();
-			export_particles("output/", frame_num, ws, ws.particleRad);
-			export_high_res_particles("output/", frame_num, ws, ws.particleRad/2.0f);
-			export_water_particles("output/", frame_num, ws, ws.particleRad);
+			//export_particles("output/", frame_num, ws, ws.particleRad);
+			//export_high_res_particles("output/", frame_num, ws, ws.particleRad/2.0f);
+			//export_water_particles("output/", frame_num, ws, ws.particleRad);
 		}
         frame_num++;
 
